@@ -1,0 +1,174 @@
+{% extends 'master.html'%} {% block title %}Dashboaerd{% endblock%} 
+{% block content %} {% if messages %} {% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ message }}
+
+  <button type="button" class="btn-close"></button>
+</div>
+{% endfor %} {% endif %}
+<section class="hero py-5">
+  <div class="container py-lg-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span
+          class="badge rounded-pill bg-white text-primary shadow-sm px-3 py-2 mb-3"
+          >Travel together. Explore more.</span
+        >
+        <h1 class="display-4 fw-bold mb-3">
+          Find your next adventure or
+          <span class="text-primary">offer a seat.</span>
+        </h1>
+        <p class="lead text-secondary mb-4">
+          Discover tours, share your car, create trips, and let travelers vote
+          for the destinations they want next.
+        </p>
+        <div class="search-box bg-white shadow-lg p-3 rounded-4">
+          <div class="row g-2">
+            <div class="col-md-4">
+              <label class="small text-muted">From</label
+              ><input
+                class="form-control border-0 bg-light"
+                placeholder="Ludhiana"
+              />
+            </div>
+            <div class="col-md-4">
+              <label class="small text-muted">To</label
+              ><input
+                class="form-control border-0 bg-light"
+                placeholder="Manali"
+              />
+            </div>
+            <div class="col-md-4">
+              <label class="small text-muted">Date</label
+              ><input type="date" class="form-control border-0 bg-light" />
+            </div>
+            <div class="col-12">
+              <a
+                class="btn btn-primary w-100 rounded-3"
+                href="{% url 'tours' %}"
+              >
+                <i class="bi bi-search me-2"></i>Search Tours
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-card p-4 rounded-4 shadow-lg bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Popular this week</h5>
+            <span class="badge bg-success-subtle text-success">Live</span>
+          </div>
+          <div class="mini-tour">
+            <div class="tour-icon">🏔️</div>
+            <div><b>Manali Weekend</b><small>18 votes · ₹2,499</small></div>
+            <span class="ms-auto text-success fw-bold">92%</span>
+          </div>
+          <div class="mini-tour">
+            <div class="tour-icon">🏖️</div>
+            <div><b>Goa Escape</b><small>14 votes · ₹4,999</small></div>
+            <span class="ms-auto text-success fw-bold">81%</span>
+          </div>
+          <div class="mini-tour">
+            <div class="tour-icon">🏰</div>
+            <div><b>Jaipur Heritage</b><small>11 votes · ₹2,199</small></div>
+            <span class="ms-auto text-success fw-bold">74%</span>
+          </div>
+          <a
+            href="{% url 'requests' %}"
+            class="btn btn-outline-primary w-100 mt-3"
+            >Vote for next tour</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">DISCOVER</span>
+        <h2 class="fw-bold">Popular tours</h2>
+      </div>
+      <a href="{% url 'tours' %}" class="btn btn-outline-dark">View all</a>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="tour-card">
+          <div class="tour-image bg-manali">
+            <span class="badge bg-white text-dark">Top rated</span>
+          </div>
+          <div class="p-4">
+            <h5>Manali Weekend</h5>
+            <p class="text-muted small">Ludhiana → Manali · 2 nights</p>
+            <div class="d-flex justify-content-between">
+              <b>₹2,499/person</b><span>⭐ 4.9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="tour-card">
+          <div class="tour-image bg-goa">
+            <span class="badge bg-white text-dark">Popular</span>
+          </div>
+          <div class="p-4">
+            <h5>Goa Escape</h5>
+            <p class="text-muted small">Delhi → Goa · 4 nights</p>
+            <div class="d-flex justify-content-between">
+              <b>₹4,999/person</b><span>⭐ 4.8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="tour-card">
+          <div class="tour-image bg-jaipur">
+            <span class="badge bg-white text-dark">New</span>
+          </div>
+          <div class="p-4">
+            <h5>Jaipur Heritage</h5>
+            <p class="text-muted small">Delhi → Jaipur · 2 days</p>
+            <div class="d-flex justify-content-between">
+              <b>₹2,199/person</b><span>⭐ 4.7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light-subtle">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature">
+          <i class="bi bi-car-front"></i>
+          <h5>Share your car</h5>
+          <p>Register your vehicle, route, seats, price and availability.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <i class="bi bi-calendar-event"></i>
+          <h5>Create a tour</h5>
+          <p>Publish your own trip with dates, itinerary, pricing and seats.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <i class="bi bi-bar-chart"></i>
+          <h5>Vote & discover</h5>
+          <p>
+            Request destinations and vote to push the best trips to the top.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

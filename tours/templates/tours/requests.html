@@ -1,0 +1,120 @@
+{% extends 'master.html' %} {% block title %}Request{% endblock %} 
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">COMMUNITY VOTING</span>
+    <h1 class="fw-bold">What should we tour next?</h1>
+    <p class="text-muted">
+      Request a destination and vote. Popular requests can be turned into
+      upcoming tours.
+    </p>
+  </div>
+</div>
+<main class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4>Top requested tours</h4>
+          <select class="form-select w-auto">
+            <option>Most voted</option>
+            <option>Newest</option>
+            <option>Nearby</option>
+          </select>
+        </div>
+        <div class="vote-card mb-3">
+          <div class="d-flex gap-3">
+            <div class="avatar">🏔️</div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="mb-1">Dharamshala & McLeod Ganj</h5>
+                  <small class="text-muted"
+                    >Requested by Neha · 3 days · ₹2,800 target</small
+                  >
+                </div>
+                <span class="badge text-bg-success align-self-start"
+                  >Trending</span
+                >
+              </div>
+              <div class="progress my-3">
+                <div class="progress-bar" style="width: 86%"></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <small><b data-count>86</b> votes · 86% interested</small
+                ><button data-vote class="btn btn-outline-primary btn-sm">
+                  Vote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vote-card mb-3">
+          <div class="d-flex gap-3">
+            <div class="avatar">🏖️</div>
+            <div class="flex-grow-1">
+              <h5 class="mb-1">Goa Beach Trip</h5>
+              <small class="text-muted"
+                >Requested by Arjun · 4 days · ₹5,000 target</small
+              >
+              <div class="progress my-3">
+                <div class="progress-bar" style="width: 71%"></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <small><b data-count>71</b> votes · 71% interested</small
+                ><button data-vote class="btn btn-outline-primary btn-sm">
+                  Vote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vote-card mb-3">
+          <div class="d-flex gap-3">
+            <div class="avatar">🏜️</div>
+            <div class="flex-grow-1">
+              <h5 class="mb-1">Jaisalmer Desert Camp</h5>
+              <small class="text-muted"
+                >Requested by Karan · 2 days · ₹3,200 target</small
+              >
+              <div class="progress my-3">
+                <div class="progress-bar" style="width: 58%"></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <small><b data-count>58</b> votes · 58% interested</small
+                ><button data-vote class="btn btn-outline-primary btn-sm">
+                  Vote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-card sticky-lg-top" style="top: 90px">
+          <h5>Request a tour</h5>
+          <p class="text-muted small">
+            Can't find your destination? Ask the community.
+          </p>
+          <label class="form-label">Destination</label
+          ><input class="form-control mb-3" placeholder="e.g. Kashmir" /><label
+            class="form-label"
+            >Preferred date</label
+          ><input type="date" class="form-control mb-3" /><label
+            class="form-label"
+            >Budget per person</label
+          ><input
+            type="number"
+            class="form-control mb-3"
+            placeholder="3000"
+          /><label class="form-label">Why do you want to go?</label
+          ><textarea class="form-control mb-3" rows="3"></textarea
+          ><button class="btn btn-primary w-100">Post request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

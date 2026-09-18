@@ -1,0 +1,113 @@
+{% extends 'master.html' %} {% block title %} List {% endblock %} 
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">EXPLORE</span>
+    <h1 class="fw-bold">Find your next tour</h1>
+    <p class="text-secondary">
+      Search available routes, seats and hosted tours.
+    </p>
+    <div class="bg-white p-3 rounded-4 shadow-sm">
+      <div class="row g-2">
+        <div class="col-md-3">
+          <input class="form-control" placeholder="From" />
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" placeholder="To" />
+        </div>
+        <div class="col-md-2">
+          <input type="date" class="form-control" />
+        </div>
+        <div class="col-md-2">
+          <select class="form-select">
+            <option>Any price</option>
+            <option>Under ₹2,000</option>
+            <option>₹2,000–₹5,000</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary w-100">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between mb-4">
+      <h4>Available tours</h4>
+      <select class="form-select w-auto">
+        <option>Recommended</option>
+        <option>Price: low to high</option>
+        <option>Highest rated</option>
+      </select>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="tour-card">
+          <div class="tour-image bg-manali"></div>
+          <div class="p-4">
+            <div class="d-flex justify-content-between">
+              <h5>Manali Weekend</h5>
+              <span class="badge text-bg-success">4 seats</span>
+            </div>
+            <p class="text-muted">Ludhiana → Manali · Sep 19–21</p>
+            <div class="small text-muted mb-3">
+              <i class="bi bi-person-circle"></i> Hosted by Rahul · ⭐ 4.9
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <strong>₹2,499</strong
+              ><a class="btn btn-primary btn-sm" href="{% url 'detail' 1 %}"
+                >View details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="tour-card">
+          <div class="tour-image bg-goa"></div>
+          <div class="p-4">
+            <div class="d-flex justify-content-between">
+              <h5>Goa Escape</h5>
+              <span class="badge text-bg-success">2 seats</span>
+            </div>
+            <p class="text-muted">Delhi → Goa · Oct 2–6</p>
+            <div class="small text-muted mb-3">
+              <i class="bi bi-person-circle"></i> Hosted by Simran · ⭐ 4.8
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <strong>₹4,999</strong
+              ><a class="btn btn-primary btn-sm" href="{% url 'detail' 2 %}"
+                >View details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="tour-card">
+          <div class="tour-image bg-jaipur"></div>
+          <div class="p-4">
+            <div class="d-flex justify-content-between">
+              <h5>Jaipur Heritage</h5>
+              <span class="badge text-bg-success">6 seats</span>
+            </div>
+            <p class="text-muted">Delhi → Jaipur · Sep 27</p>
+            <div class="small text-muted mb-3">
+              <i class="bi bi-person-circle"></i> Hosted by Aman · ⭐ 4.7
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <strong>₹2,199</strong
+              ><a class="btn btn-primary btn-sm" href="{% url 'detail' 3 %}"
+                >View details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

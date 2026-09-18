@@ -1,0 +1,55 @@
+{% extends 'master.html' %} {% block title %}{% endblock %} {% block content %}
+
+<main class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div
+          class="tour-image bg-manali rounded-4 mb-4"
+          style="height: 320px"
+        ></div>
+        <span class="badge text-bg-success mb-2">4 seats available</span>
+        <h1 class="fw-bold">Manali Weekend Tour</h1>
+        <p class="text-muted">
+          Ludhiana → Mandi → Manali · September 19–21, 2026
+        </p>
+        <hr />
+        <h4>Itinerary</h4>
+        <div class="list-group mb-4">
+          <div class="list-group-item">
+            <b>Day 1</b> — Depart Ludhiana · Reach Manali · Hotel check-in
+          </div>
+          <div class="list-group-item">
+            <b>Day 2</b> — Solang Valley · Mall Road · Local sightseeing
+          </div>
+          <div class="list-group-item">
+            <b>Day 3</b> — Breakfast · Return journey
+          </div>
+        </div>
+        <h4>What's included</h4>
+        <ul>
+          <li>Travel in registered vehicle</li>
+          <li>Hotel stay</li>
+          <li>Local sightseeing</li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-card sticky-lg-top" style="top: 90px">
+          <h4>Book your seat</h4>
+          <p class="text-muted">₹2,499 per person</p>
+          <label class="form-label">Seats</label
+          ><input type="number" class="form-control mb-3" min="1" value="1" />
+          <div class="d-flex justify-content-between mb-3">
+            <span>Total</span><b>₹2,499</b>
+          </div>
+          <button class="btn btn-primary w-100">Request to join</button
+          ><small class="d-block text-muted mt-3"
+            >The host will confirm your request.</small
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

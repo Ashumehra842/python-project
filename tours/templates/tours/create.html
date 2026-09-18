@@ -1,0 +1,88 @@
+{% extends 'master.html' %} {% block title %}Create{% endblock%}
+ {% block content %}
+<main class="py-5 bg-light-subtle">
+  <div class="container">
+    <div class="mb-4">
+      <span class="eyebrow">HOST A TRIP</span>
+      <h1 class="fw-bold">Create a new tour</h1>
+      <p class="text-muted">
+        Publish your route, dates, pricing and available seats.
+      </p>
+    </div>
+    <form class="form-card">
+      <div class="row g-4">
+        <div class="col-12"><h5>Basic information</h5></div>
+        <div class="col-md-6">
+          <label class="form-label">Tour title</label
+          ><input
+            class="form-control"
+            placeholder="e.g. Manali Weekend Adventure"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Tour category</label
+          ><select class="form-select">
+            <option>Road trip</option>
+            <option>Family</option>
+            <option>Adventure</option>
+            <option>Weekend</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Starting location</label
+          ><input class="form-control" placeholder="Ludhiana" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Destination</label
+          ><input class="form-control" placeholder="Manali" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Start date & time</label
+          ><input type="datetime-local" class="form-control" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">End date & time</label
+          ><input type="datetime-local" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Price / person</label
+          ><input type="number" class="form-control" placeholder="2499" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Available seats</label
+          ><input type="number" class="form-control" placeholder="4" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Vehicle</label
+          ><select class="form-select">
+            <option>My registered car</option>
+            <option>Add a vehicle</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Description</label
+          ><textarea
+            class="form-control"
+            rows="4"
+            placeholder="Tell travelers about the tour..."
+          ></textarea>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Pickup points</label
+          ><input
+            class="form-control"
+            placeholder="Add pickup locations separated by commas"
+          />
+        </div>
+        <div class="col-12 d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-light">Save draft</button
+          ><button type="submit" class="btn btn-primary px-4">
+            Publish tour
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+{% endblock %}
