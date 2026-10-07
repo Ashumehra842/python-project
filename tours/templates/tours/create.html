@@ -1,5 +1,5 @@
-{% extends 'master.html' %} {% block title %}Create{% endblock%}
- {% block content %}
+{% extends 'master.html' %} {% block title %}Create{% endblock%} 
+{% block content %}
 <main class="py-5 bg-light-subtle">
   <div class="container">
     <div class="mb-4">
@@ -9,54 +9,74 @@
         Publish your route, dates, pricing and available seats.
       </p>
     </div>
-    <form class="form-card">
+    <form class="form-card" method="POST" action="{% url 'create' %}">
+      {% csrf_token %}
       <div class="row g-4">
         <div class="col-12"><h5>Basic information</h5></div>
         <div class="col-md-6">
           <label class="form-label">Tour title</label
           ><input
             class="form-control"
+            name="title"
             placeholder="e.g. Manali Weekend Adventure"
           />
         </div>
         <div class="col-md-6">
           <label class="form-label">Tour category</label
-          ><select class="form-select">
-            <option>Road trip</option>
-            <option>Family</option>
-            <option>Adventure</option>
-            <option>Weekend</option>
+          ><select class="form-select" name="tour_category">
+            <option value="road_trip">Road trip</option>
+            <option value="family">Family</option>
+            <option value="adventure">Adventure</option>
+            <option value="weekly">Weekend</option>
           </select>
         </div>
         <div class="col-md-6">
           <label class="form-label">Starting location</label
-          ><input class="form-control" placeholder="Ludhiana" />
+          ><input
+            class="form-control"
+            name="start_location"
+            placeholder="Ludhiana"
+          />
         </div>
         <div class="col-md-6">
           <label class="form-label">Destination</label
-          ><input class="form-control" placeholder="Manali" />
+          ><input
+            class="form-control"
+            name="destination"
+            placeholder="Manali"
+          />
         </div>
         <div class="col-md-6">
           <label class="form-label">Start date & time</label
-          ><input type="datetime-local" class="form-control" />
+          ><input type="date" name="start_date" class="form-control" />
         </div>
         <div class="col-md-6">
           <label class="form-label">End date & time</label
-          ><input type="datetime-local" class="form-control" />
+          ><input type="date" name="end_date" class="form-control" />
         </div>
         <div class="col-md-4">
           <label class="form-label">Price / person</label
-          ><input type="number" class="form-control" placeholder="2499" />
+          ><input
+            type="number"
+            name="price_per_person"
+            class="form-control"
+            placeholder="2499"
+          />
         </div>
         <div class="col-md-4">
           <label class="form-label">Available seats</label
-          ><input type="number" class="form-control" placeholder="4" />
+          ><input
+            type="number"
+            name="seat"
+            class="form-control"
+            placeholder="4"
+          />
         </div>
         <div class="col-md-4">
           <label class="form-label">Vehicle</label
-          ><select class="form-select">
-            <option>My registered car</option>
-            <option>Add a vehicle</option>
+          ><select class="form-select" name="vehicle">
+            <option value="reg_car">My registered car</option>
+            <option value="add_vehicle">Add a vehicle</option>
           </select>
         </div>
         <div class="col-12">
@@ -64,6 +84,7 @@
           ><textarea
             class="form-control"
             rows="4"
+            name="description"
             placeholder="Tell travelers about the tour..."
           ></textarea>
         </div>
@@ -71,6 +92,7 @@
           <label class="form-label">Pickup points</label
           ><input
             class="form-control"
+            name="pickup_point"
             placeholder="Add pickup locations separated by commas"
           />
         </div>
