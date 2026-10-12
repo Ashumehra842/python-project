@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from tours.models import Tour
+from django.contrib import messages
 # Create your views here.
 
 
@@ -35,7 +36,8 @@ def create(request):
                 longitude = '' or None,
             )
             if tour is not None:
-                return redirect('/')
+                messages.success(request, 'Tour created successfully.!')
+                return redirect('/tour')
         except Exception as ex:
                 print(str(ex))
         
